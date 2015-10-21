@@ -1,4 +1,3 @@
-
 package org.usfirst.frc.team4.robot;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
@@ -7,6 +6,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import org.usfirst.frc.team4.robot.commands.ExampleCommand;
 import org.usfirst.frc.team4.robot.subsystems.ExampleSubsystem;
+import org.usfirst.frc.team4.robot.subsystems.Pneumatics;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -19,7 +19,7 @@ public class Robot extends IterativeRobot {
 
 	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 	public static OI oi;
-
+	public static Pneumatics pneumatics;
     Command autonomousCommand;
 
     /**
@@ -28,6 +28,7 @@ public class Robot extends IterativeRobot {
      */
     public void robotInit() {
 		oi = new OI();
+		pneumatics = new Pneumatics ();
         // instantiate the command used for the autonomous period
         autonomousCommand = new ExampleCommand();
     }
